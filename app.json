@@ -1,0 +1,93 @@
+{
+  "expo": {
+    "name": "ProField AI",
+    "slug": "profield-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "profield",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0E1A"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.profield.ai",
+      "infoPlist": {
+        "NSCameraUsageDescription": "ProField AI uses your camera to capture photos and videos for mission documentation.",
+        "NSMicrophoneUsageDescription": "ProField AI uses your microphone for voice dictation and video recording.",
+        "NSLocationWhenInUseUsageDescription": "ProField AI uses your location to geotag observations and missions.",
+        "NSPhotoLibraryUsageDescription": "ProField AI accesses your photo library to attach images to reports.",
+        "NSFaceIDUsageDescription": "Use Face ID to securely access your ProField AI account."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#0A0E1A"
+      },
+      "package": "com.profield.ai",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "USE_FINGERPRINT",
+        "USE_BIOMETRIC"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow ProField AI to access your camera.",
+          "microphonePermission": "Allow ProField AI to access your microphone.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow ProField AI to access your photos.",
+          "savePhotosPermission": "Allow ProField AI to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow ProField AI to use your location."
+        }
+      ],
+      "expo-secure-store",
+      "expo-av"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      },
+      "clerkPublishableKey": "YOUR_CLERK_PUBLISHABLE_KEY",
+      "supabaseUrl": "YOUR_SUPABASE_URL",
+      "supabaseAnonKey": "YOUR_SUPABASE_ANON_KEY",
+      "anthropicApiKey": "YOUR_ANTHROPIC_API_KEY",
+      "openaiApiKey": "YOUR_OPENAI_API_KEY"
+    }
+  }
+}
